@@ -25,5 +25,6 @@ module.exports = {
     'react/props-types': 'off',
     'react/jsx-no-bind': 'off',
     'prettier/prettier': 2,
+    'import/no-extraneous-dependencies': ['error', { devDependencies: true }],
   },
 };
