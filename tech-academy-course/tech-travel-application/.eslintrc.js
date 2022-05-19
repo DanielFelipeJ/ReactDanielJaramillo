@@ -22,7 +22,7 @@ module.exports = {
     camelcase: 'off',
     'no-console': 'off',
     'react/jsx-props-no-spreading': 'off',
-    'react/props-types': 'off',
+    'react/prop-types': 'off',
     'react/jsx-no-bind': 'off',
     'prettier/prettier': 2,
     'import/no-extraneous-dependencies': ['error', { devDependencies: true }],

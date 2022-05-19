@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { MdDelete } from 'react-icons/md';
 import {
   Container,
@@ -8,25 +8,29 @@ import {
   Quantity,
   Subtotal,
 } from './styles';
+import CartContext from '../../context/cart';
 
 function Cart() {
+  const { state, setState } = useContext(CartContext);
   return (
     <Container>
       <ContainerList>
-        <TravelItem>
-          <img src="" alt="titulo del viaje" />
-          <Info>
-            <p>Título</p>
-            <strong>Precio</strong>
-          </Info>
-          <Quantity readOnly type="number" value={1} />
-          <Subtotal>
-            <p>200.00</p>
-            <button type="button">
-              <MdDelete size={24} color="#0676d9" />
-            </button>
-          </Subtotal>
-        </TravelItem>
+        {state.cart.map((el) => (
+          <TravelItem key={2}>
+            <img src={el.photo} alt="titulo del viaje" />
+            <Info>
+              <p>{el.title}</p>
+              <strong>{el.price}</strong>
+            </Info>
+            <Quantity readOnly type="number" value={el.quantity} />
+            <Subtotal>
+              <p>{el.quantity * el.price}</p>
+              <button type="button">
+                <MdDelete size={24} color="#0676d9" />
+              </button>
+            </Subtotal>
+          </TravelItem>
+        ))}
       </ContainerList>
     </Container>
   );
