@@ -18,6 +18,7 @@ function Home() {
 
   function handleAddToCart(travel) {
     const copyCart = [...state.cart];
+
     const travelIndex = copyCart.findIndex((el) => el.id === travel.id);
     if (travelIndex >= 0) {
       copyCart[travelIndex].quantity += 1;
@@ -37,7 +38,7 @@ function Home() {
           <Unit key="">
             <img src={el.photo} alt="Travel" />
             <p>{el.title}</p>
-            <strong>{el.price}</strong>
+            <strong>${el.price}</strong>
             <button type="button" onClick={() => handleAddToCart(el)}>
               <div>
                 <MdAddShoppingCart size={16} color="#fff" />

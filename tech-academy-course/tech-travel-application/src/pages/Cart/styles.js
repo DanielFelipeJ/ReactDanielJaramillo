@@ -69,3 +69,31 @@ export const Subtotal = styled.div`
     margin-right: 10px;
   }
 `;
+
+export const Container2 = styled.div`
+  display: flex;
+  justify-content: center;
+`;
+
+export const ContainerTotal = styled.div`
+  width: 100%;
+  background-color: #fff;
+  display: grid;
+  grid-template-columns: 4fr auto 1fr;
+  justify-content: center;
+  border-radius: 5px;v
+  padding: 36px 44px;
+  align-items: center;
+  margin-top: 10px;
+  max-width: 958px;
+`;
+
+export const TitleTotal = styled.div`
+  grid-column: 2;
+  text-align: left;
+`;
+
+export const TotalToPay = styled.div`
+  grid-column: 3;
+  text-align: center;
+`;
